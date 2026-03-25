@@ -51,6 +51,6 @@ if (num===1) {
     cresult = "It is certain";
 }
     document.getElementById("result").textContent = result;
-    btn.removeEventListener("animationend", onShakeEnd); // remove listener
+    btn.removeEventListener("animationend", onShakeEnd);
   });
 }
