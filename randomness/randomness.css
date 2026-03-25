@@ -5,10 +5,101 @@
 }
 body {
 	font-family: sans-serif;
-	background-color: hsl(72deg, 100%, 90%);
-	height: 100dvh; /* more info about dvh here: https://web.dev/blog/viewport-units */
+	background-image: radial-gradient(circle at center, hsl(315, 89%, 50%), hsl(272, 84%, 39%)); 
+	height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+h1 {
+	font-family: 'Eight Ball', sans-serif;
+	font-size: 45px;
+	padding-bottom: 2%;
+	color: white;
+}
+h2 {
+	font-family: helvetica;
+	font-size: 175px;
+}
+
+.ball {
+	width: 750px;
+  	height: 750px;
+  	border: none;
+  	border-radius: 50%;
+ 	background: radial-gradient(circle at 70px 70px, #555, #000); 
+	box-shadow: 10px 10px 20px black; 
+  	position: relative; 
+}
+
+#button {
+	width: 450px;
+	height: 450px;
+	top: 20%;
+	left: 20%;
+	border: none;
+	border-radius: 50%;
+	background: radial-gradient(circle at 70px 70px, #ffffff, #c0c0c0); 
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	position: absolute; 
+	transition: all 0.3s ease;
+}
+
+#button::after {
+	content: "";
+	position: absolute;
+	top: 10%;  
+	left: 17%;
+	width: 0;
+	height: 0;
+	border-left: 150px solid transparent;
+	border-right: 150px solid transparent;
+	border-bottom: 300px solid blue;
+	opacity: 0;          
+	transform: scale(0);  
+	transition: transform 0.4s ease, opacity 0.4s ease;
+	z-index: 1;
+}
+
+#button.triangle::after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+#result {
+	position: absolute;
+	top: 42%;       
+	left: 51%;
+	transform: translateX(-50%);
+	color: white;
+	font-weight: bold;
+	letter-spacing: .25em;
+	font-family: helvetica;
+	font-size: 15px;
+	text-transform: uppercase;
+	overflow-wrap: break-word;
+	text-align: center;
+	padding: 8%;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	z-index: 2;
+}
+
+#button.triangle #result {
+	opacity: 1;
+}
+
+@keyframes shake {
+	0% { transform: translateX(0); }
+	20% { transform: translateX(-10px); }
+	40% { transform: translateX(10px); }
+	60% { transform: translateX(-10px); }
+	80% { transform: translateX(10px); }
+	100% { transform: translateX(0); }
+}
+
+.shake {
+	animation: shake 0.5s;
 }
