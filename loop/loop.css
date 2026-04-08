@@ -1,14 +1,8 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
-	font-family: sans-serif;
-	background-color: hsl(288deg, 100%, 90%);
-	height: 100dvh; /* more info about dvh here: https://web.dev/blog/viewport-units */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
+	<style>
+		.body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 50px;
+		}
+	</style>
