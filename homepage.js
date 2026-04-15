@@ -3,19 +3,15 @@ const preview = document.getElementById("preview");
 const states = {
   randomness: {
     bg: "linear-gradient(120deg, #ffcc00, #ff3366)",
-    anim: "flicker"
   },
   time: {
     bg: "linear-gradient(120deg, #a3b18a, #d8b384)",
-    anim: "slow"
   },
   interaction: {
     bg: "linear-gradient(120deg, #0ff, #ff00ff)",
-    anim: "pulse"
   },
   loop: {
     bg: "linear-gradient(120deg, #111, #444)",
-    anim: "grain"
   }
 };
 
