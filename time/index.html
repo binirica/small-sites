@@ -5,8 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Small Sites; Big Stories | Time</title>
 	<link rel="stylesheet" href="time.css">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+	<div class="timer">
+		<svg viewBox="0 0 100 100">
+			<circle class="track" cx="50" cy="50" r="45"/>
+			<circle class="ring" cx="50" cy="50" r="45"/>
+		</svg>
+		<p class="display">00:00</p>
+		<input type="range" min="1" max="3600" value="600" id="slider"/>
+		<button id="visualTimer">Start</button>
+	</div>
 
 	<script src="time.js"></script>
 </body>
