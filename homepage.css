@@ -1,43 +1,50 @@
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #0e0f12;
-  color: rgba(255,255,255,0.85);
+  font-family: "petala-pro", sans-serif;
+  background: #370587;
+  color: #5a24d7;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 h1 {
   font-weight: 500;
-  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
   margin-bottom: 10px;
+  text-shadow: .5px .5px 1px #52e352;
 }
 
 .subtitle {
   opacity: 0.5;
+  color: #5a24d7;
+  text-shadow: .5px .5px 1px #52e352;
+  text-transform:lowercase;
+  letter-spacing: .2rem;
   margin-bottom: 40px;
 }
 
 nav {
   display: grid;
-  grid-template-columns: repeat(2, 160px);
-  gap: 12px;
+  grid-template-columns: repeat(2, 200px);
+  gap: 20px;
 }
 
 .tile {
   text-decoration: none;
-  color: inherit;
-  padding: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(8px);
-  transition: 0.25s ease;
-
-
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
   letter-spacing: 0.1em;
   text-transform: lowercase;
+  color:  #52e35285;
+  border: 1px solid rgba(12, 4, 24, 0.08);
+  border-radius: 50%;
+  background: rgba(12, 4, 24, 0.08);
+  backdrop-filter: blur(8px);
+  transition: 0.25s ease;
 }
 
 
