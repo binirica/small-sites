@@ -1,8 +1,61 @@
-	<style>
-		.body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-left: 50px;
-		}
-	</style>
+body {
+  margin: 0;
+  background: #0e0f12;
+  font-family: sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+#topBar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 60px;
+  display: flex;
+  gap: 10px;
+}
+
+#rightBar {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(90deg);
+  transform-origin: top right;
+}
+
+input {
+  background: #1a1c22;
+  border: 1px solid #2a2d36;
+  color: #e6e6e6;
+  padding: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+#grid {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  right: 60px;
+  bottom: 10px;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+}
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.75);
+  filter: blur(0.3px);
+  font-size: 14px;
+}

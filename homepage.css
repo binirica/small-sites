@@ -1,24 +1,74 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 body {
-	font-family: sans-serif;
-	background-color: hsl(0deg, 100%, 90%);
-	height: 100dvh; /* more info about dvh here: https://web.dev/blog/viewport-units */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0e0f12;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
 }
+
+h1 {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.5;
+  margin-bottom: 40px;
+}
+
 nav {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 160px);
+  gap: 12px;
 }
-a {
-	color: black;
+
+.tile {
+  text-decoration: none;
+  color: inherit;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
+  transition: 0.25s ease;
+
+
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+
+.tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+}
+
+#preview {
+  width: 260px;
+  height: 140px;
+  margin-top: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(10px);
+  transition: all 0.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  animation: drift 6s infinite linear;
+}
+
+@keyframes drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
 }
