@@ -2,10 +2,10 @@ const preview = document.getElementById("preview");
 
 const states = {
   randomness: {
-    bg: "linear-gradient(120deg, #ffcc00, #ff3366)",
+    bg: "linear-gradient(120deg, #8800ff, #ff3366)",
   },
   time: {
-    bg: "linear-gradient(120deg, #a3b18a, #d8b384)",
+    bg: "linear-gradient(120deg, #e07a5f, #4f7a65)",
   },
   interaction: {
     bg: "linear-gradient(120deg, #0ff, #ff00ff)",
