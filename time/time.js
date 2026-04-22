@@ -56,7 +56,7 @@ slider.addEventListener('input', () => {
 
 visualTimer.addEventListener('click', () => { //fires each time user clicks the timer element
   clearInterval(timer) //stops current timer in progress before starting a new timer, uses 'timer' reference stored earlier to cancel it
-  ring.style['stroke'] = '#7a9e7e' //changes ring stroke color to light green to signal timer is running
+  ring.style['stroke'] = '#7a9e7e' //changes ring stroke color to green to signal timer is running
   secondsLeft = totalSeconds //resets countdown back to full selected duration before starting timer
 
   timer = setInterval( () => { //'setInterval()' runs the function inside it repeatedly and the return value is stored in 'timer' to stop it later
@@ -79,7 +79,7 @@ visualTimer.addEventListener('click', () => { //fires each time user clicks the 
 
     if (secondsLeft <= 0) { //when countdown reaches zero, reset
       clearInterval(timer) //stop interval from continuing to run
-      ring.style['stroke-dashoffset'] = 0 //reset ring stroke to fully drawn (dark green)
+      ring.style['stroke-dashoffset'] = 0 //reset ring stroke to fully drawn (green)
       ring.style['stroke'] = '#c97b63' //change ring color to orange to indicate time's up
       display.textContent = 'Time!' //replace countdown text with 'time!'
     }
