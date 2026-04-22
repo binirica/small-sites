@@ -4,20 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Small Sites; Big Stories | Time</title>
-	<link rel="stylesheet" href="time.css">
+	<link rel="stylesheet" href="time.css"> 
 	<link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="timer">
-		<svg viewBox="0 0 100 100">
+	<div class="timer"> <!--div container with class 'timer' so css and js can target it-->
+		<svg viewBox="0 0 100 100"> <!--sets internal coordinate system at origin (0,0), width 100 units, height 100 units -->
 			<circle class="track" cx="50" cy="50" r="45"/>
+			<!--background circle'cx="50" cy="50"' sets center point at middle of 100x100 viewBox. 'r="45"' sets the radius to 45 units (leaving a small margin from the edges).-->
 			<circle class="ring" cx="50" cy="50" r="45"/>
+			<!--progress ring same size and position as track, class="ring" targeted in js to animate 'stroke-dashoffset'-->
 		</svg>
 		<p class="display">00:00</p>
 		<input type="range" min="1" max="3600" value="600" id="slider"/>
+		<!-- A range input renders as draggable slider
+		'min="1"' slider's minimum value is 1 second.
+		'max="3600"' maximum is 3600 seconds (1 hour).
+		'value="600"' slider starts at 600 seconds (10 minutes) by default.
+		'id="slider"' gives it a unique id so js can read its value and listen for changes as the user drags it (eventListener). -->
 		<button id="visualTimer">Start</button>
+		<!--clickable button that triggers countdown when pressed-->
 	</div>
-
 	<script src="time.js"></script>
 </body>
 </html>
