@@ -1,6 +1,6 @@
 const preview = document.getElementById("preview");
 
-const states = {
+const states = { //object as lookup table
   randomness: {
     bg: "linear-gradient(120deg, #8800ff, #ff3366)",
   },
@@ -20,8 +20,6 @@ document.querySelectorAll(".tile").forEach(tile => {
 
   tile.addEventListener("mouseenter", () => {
     const s = states[key];
-
-    if (!s) return;
 
     preview.style.background = s.bg;
 
