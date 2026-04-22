@@ -1,14 +1,27 @@
-function handleClick() {
-    const btn = document.getElementById("button");
+function handleClick() { //function triggered by onlcick attribute on a button in html
+    const btn = document.getElementById("button"); //grabs html element with id="button" and stores it in 'btn'
 
-    btn.classList.add("shake");
+    //SHAKE ANIMATION
+    btn.classList.add("shake"); //built-in property 'classList' modifies css without overwriting and '.add("shake") applies "shake" class which activates CSS keyframe animation to physically shake button
 
+    //WAIT FOR SHAKE TO FINISH, THEN RETURN RESULT
     btn.addEventListener("animationend", function onShakeEnd() {
-        btn.classList.remove("shake");  
-        btn.classList.add("triangle");   
+    //'animationend' is a built-in browser event that fires automatically the moment css animation completes on an element
+    // use instead of a timer (setTimeout) so result only appears after the shake visually finishes 
+    //'function onShakeEnd()' names the function  and allows to remove this listener later (removeEventListener)
+        btn.classList.remove("shake"); //removes shake when animation is done
+        btn.classList.add("triangle"); //changes the buttons visual to reveal answer
+    
+    //GENERATE RANDOM NUMBER TO PICK RESPONSE
+
     const num = Math.floor(Math.random() * 20) + 1;
     let result = "";
-
+    // 'Math.random()' generates a decimal between 0 (inclusive) and 1 (exclusive)
+    // multiply by 20 to scale to a range of 0–19.9999.
+    // 'Math.floor()' rounds down to the nearest integer → 0 to 19.
+    // add 1 shifts range to 1–20, giving an integer that maps to one of the 20 potential responses below
+    
+ 
 if (num===1) { 
     result = "My reply is no.";
 } else if (num===2) {
@@ -48,9 +61,12 @@ if (num===1) {
 } else if (num===19) {
     result = "It is decidely so.";
 } else if (num===20) {
-    cresult = "It is certain";
+    result = "It is certain.";
 }
     document.getElementById("result").textContent = result;
+    // find element with id="result" and set visible text to assigned response to 'result'.
+    // '.textContent' sets plain text only (as opposed to innerHTML)
     btn.removeEventListener("animationend", onShakeEnd);
+    // Removes this exact event listener from the button after it runs once.
   });
 }
